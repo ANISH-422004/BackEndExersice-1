@@ -35,6 +35,7 @@ module.exports.formController = async (req, res) => {
     res.render("error", { error });
   }
 };
+
 module.exports.showEachController = async(req, res) => {
         console.log()        
         try {
@@ -44,6 +45,17 @@ module.exports.showEachController = async(req, res) => {
         } catch (error) {
                 res.render("error", { error });
         }
+};
 
+module.exports.deleteController = async(req, res) => {
+  console.log()        
+  try {
+          const requestedUserName = req.params.username 
+          const user =  await userModel.findOneAndDelete({
+            username: requestedUserName})
 
-      };
+          res.redirect("/")
+  } catch (error) {
+          res.render("error", { error });
+  }
+};

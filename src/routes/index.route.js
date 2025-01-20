@@ -6,4 +6,5 @@ router.get("/" , controller.homeController)
 router.get("/create", controller.createController)
 router.post("/create", controller.formController)
 router.get("/show/:useremail", controller.showEachController)
-module.exports = router; 
+router.get("/delete/:username", controller.deleteController)
+module.exports = router;   

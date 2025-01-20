@@ -107,6 +107,7 @@
                 <p><strong>Gender:</strong> <%= user.gender %></p>
                 <p><strong>Age:</strong> <%= user.age %></p>
                 <a href="/show/<%= user.email %>">Show Profile</a>
+                <a href="/delete/<%= user.username %>">Delete</a>
             </div>
         <% }); %>
     </div>
