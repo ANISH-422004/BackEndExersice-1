@@ -1,0 +1,24 @@
+{
+  "name": "backendexersice-1",
+  "version": "1.0.0",
+  "description": "basic projectg",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ANISH-422004/BackEndExersice-1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ANISH-422004/BackEndExersice-1/issues"
+  },
+  "homepage": "https://github.com/ANISH-422004/BackEndExersice-1#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}
