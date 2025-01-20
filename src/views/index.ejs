@@ -4,13 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User List</title>
-  
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
+            background-color: #e9f7ef; /* Light green background */
+            color: #2d6a4f; /* Dark green text */
+            margin: 0;
+            padding: 0;
         }
+
+        /* Navbar styles */
+        nav {
+            background-color: #2d6a4f; /* Dark green */
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+        nav a:hover {
+            background-color: #81c784; /* Light green hover effect */
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #2d6a4f;
+        }
+
         .container {
             display: flex;
             flex-wrap: wrap;
@@ -18,28 +45,58 @@
             gap: 20px;
             padding: 20px;
         }
+
         .card {
+            overflow: hidden;
             background: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 250px;
             text-align: center;
+            transition: transform 0.3s ease;
         }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
         .card img {
             border-radius: 50%;
             width: 100px;
             height: 100px;
             object-fit: cover;
         }
+
+        .card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #81c784; /* Light green */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .card a:hover {
+            background-color: #66bb6a; /* Darker green hover effect */
+        }
     </style>
 </head>
 <body>
-   
+
+    <!-- Navbar -->
+    <nav>
+        <h2>Website</h2>
         <div>
-            <h1>User List</h1>
-            <a href="/create">Create user </a>
+            <a href="/">Home</a>
+            <a href="/create">Create User</a>
         </div>
+    </nav>
+
+    <!-- Main content -->
+    <div>
+        <h1>User List</h1>
+    </div>
+
     <div class="container">
         <% users.forEach(user => { %>
             <div class="card">
@@ -49,6 +106,7 @@
                 <p><strong>Bio:</strong> <%= user.bio %></p>
                 <p><strong>Gender:</strong> <%= user.gender %></p>
                 <p><strong>Age:</strong> <%= user.age %></p>
+                <a href="/show/<%= user.email %>">Show Profile</a>
             </div>
         <% }); %>
     </div>

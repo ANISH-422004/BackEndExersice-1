@@ -35,3 +35,15 @@ module.exports.formController = async (req, res) => {
     res.render("error", { error });
   }
 };
+module.exports.showEachController = async(req, res) => {
+        console.log()        
+        try {
+                const requestedUserEmail = req.params.useremail
+                const user =  await userModel.findOne({email : requestedUserEmail})
+                res.render("show",{user})
+        } catch (error) {
+                res.render("error", { error });
+        }
+
+
+      };
