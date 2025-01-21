@@ -108,6 +108,8 @@
                 <p><strong>Age:</strong> <%= user.age %></p>
                 <a href="/show/<%= user.email %>">Show Profile</a>
                 <a href="/delete/<%= user.username %>">Delete</a>
+                <a href="/edit/<%= user._id.toString() %>">Edit Profile</a>
+
             </div>
         <% }); %>
     </div>
